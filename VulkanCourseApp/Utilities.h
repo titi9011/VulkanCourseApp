@@ -7,6 +7,7 @@
 #include <glm/glm.hpp>
 
 const int MAX_FRAME_DRAWS = 2;
+const int MAX_OBJECTS = 100;
 
 const std::vector<const char*> deviceExtensions = {
 	VK_KHR_SWAPCHAIN_EXTENSION_NAME
@@ -97,6 +98,7 @@ static void createBuffer(VkPhysicalDevice physicalDevice, VkDevice device, VkDev
 	bufferInfo.size = bufferSize;									// Size of buffer (size of 1 vertex * number of vertices)
 	bufferInfo.usage = bufferUsage;									// Multiple types of buffer possible
 	bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;				// Similar to swapchain images, can share vertex buffers
+
 
 	VkResult result = vkCreateBuffer(device, &bufferInfo, nullptr, buffer);
 
