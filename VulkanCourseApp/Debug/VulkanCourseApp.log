@@ -1,6 +1,3 @@
 ﻿  VulkanRenderer.cpp
 C:\Users\Thierry\source\repos\VulkanCourseApp\VulkanCourseApp\VulkanRenderer.cpp(98,14): warning C4018: '>=': signed/unsigned mismatch
-  main.cpp
-C:\Users\Thierry\source\repos\VulkanCourseApp\VulkanCourseApp\main.cpp(47,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-C:\Users\Thierry\source\repos\VulkanCourseApp\VulkanCourseApp\VulkanRenderer.cpp(1326,1): error C4716: 'VulkanRenderer::createImage': must return a value
+  VulkanCourseApp.vcxproj -> C:\Users\Thierry\source\repos\VulkanCourseApp\Debug\VulkanCourseApp.exe
