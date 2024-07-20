@@ -27,6 +27,7 @@ int VulkanRenderer::init(GLFWwindow* newWindow)
 		createDescriptorSetLayout();
 		createPushConstantRange();
 		createGraphicsPipeline();
+		createDepthBufferImage();
 		createFramebuffers();
 		createCommandPool();
 
@@ -771,15 +772,16 @@ void VulkanRenderer::createDepthBufferImage()
 
 	// Create depth buffer image
 	depthBufferImage = createImage(swapChainExtent.width, swapChainExtent.height, depthFormat, VK_IMAGE_TILING_OPTIMAL,
-		VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &depthBufferImage);
+		VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &depthBufferImageMemory);
 
 	// Create depth buffer image view
-	depthBufferImageView = createImageView(depthBufferImageView, depthFormat, VK_IMAGE_ASPECT_DEPTH_BIT);
+	depthBufferImageView = createImageView(depthBufferImage, depthFormat, VK_IMAGE_ASPECT_DEPTH_BIT);
 
 }
 
 void VulkanRenderer::createFramebuffers()
 {
+
 	// Resize frabuffer count to equel swap chain image count
 	swapChainFramebuffers.resize(swapChainImages.size());
 
@@ -800,6 +802,7 @@ void VulkanRenderer::createFramebuffers()
 		framebufferCreateInfo.height = swapChainExtent.height;									// Framebuffer height
 		framebufferCreateInfo.layers = 1;														// Framebuffer layers
 
+		
 		VkResult result = vkCreateFramebuffer(mainDevice.logicalDevice, &framebufferCreateInfo, nullptr, &swapChainFramebuffers[i]);
 
 		if (result != VK_SUCCESS) {

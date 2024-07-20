@@ -1,3 +1,3 @@
 ﻿  VulkanRenderer.cpp
-C:\Users\Thierry\source\repos\VulkanCourseApp\VulkanCourseApp\VulkanRenderer.cpp(98,14): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Thierry\source\repos\VulkanCourseApp\VulkanCourseApp\VulkanRenderer.cpp(99,14): warning C4018: '>=': signed/unsigned mismatch
   VulkanCourseApp.vcxproj -> C:\Users\Thierry\source\repos\VulkanCourseApp\Debug\VulkanCourseApp.exe
